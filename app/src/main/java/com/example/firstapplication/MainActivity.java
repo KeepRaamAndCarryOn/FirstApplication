@@ -1,6 +1,9 @@
 package com.example.firstapplication;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +11,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    //Declare java objects for each view
+    Button firstButton;
+    EditText inputText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +27,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        //Initialize java objects to objects from view
+        firstButton = (Button)findViewById(R.id.firstButton);
+        inputText = (EditText)findViewById(R.id.inputTextBox);
+
     }
 
     @Override
@@ -48,5 +53,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //Click event of button
+    public void sendToSecondActivity(View view){
+
+        //Get String from box
+        String str = inputText.getText().toString();
+
+        Intent i = new Intent(this, SecondActivity.class);
+
+        i.setData(Uri.parse(str));
+
+        startActivity(i);
     }
 }
