@@ -1,4 +1,4 @@
-###Views
+### Views
 Views are UI elements such as TextBox, EditText, Button etc
 Parent Views / View groups are containers for Views (e.g. Linear Layout, Relative Layout)
 View id is defined in the XML file
@@ -20,7 +20,7 @@ Intents are used to message between two components (e.g. From one activity to st
 
 To start a new activity
 * In a action method such as onClick of a button, create an Intent
-  * Intent i = new Intent(this, <destination>)
+  * Intent i = new Intent(this, <destination_class>)
 * For the <destination>, refer to the class of the second activity: SecondActivity.class
 * In the SecondActivity's onCreate method:
   * setContentView(R.layout.<second_activity>) -- Referring to the second xml file
