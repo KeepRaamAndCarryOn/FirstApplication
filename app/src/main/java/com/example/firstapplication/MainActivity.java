@@ -8,11 +8,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
         //Initialize java objects to objects from view
         firstButton = (Button)findViewById(R.id.firstButton);
         inputText = (EditText)findViewById(R.id.inputTextBox);
+
+        //Set "Go" action on keyboard event listener
+        inputText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                sendToSecondActivity(inputText);
+                return false;
+            }
+        });
 
     }
 

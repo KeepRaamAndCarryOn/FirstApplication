@@ -25,3 +25,7 @@ To start a new activity
 * In the SecondActivity's onCreate method:
   * setContentView(R.layout.<second_activity>) -- Referring to the second xml file
   * Get the intent data by using getDataString
+
+### Input Type
+"IMEAction" field of a EditText can be changed to "actionGo" or  "actionSend" to have Send/Go button on the keyboard.
+The click handler is defined in runtime (onCreate)

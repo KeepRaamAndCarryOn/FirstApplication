@@ -42,7 +42,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Input Text"
-            android:id="@+id/inputTextBox"/>
+            android:id="@+id/inputTextBox"
+            android:inputType="text"
+            android:imeOptions="actionGo" />
 
         <Button
             android:id="@+id/firstButton"
